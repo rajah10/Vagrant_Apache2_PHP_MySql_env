@@ -1,35 +1,20 @@
-# Setup a vagrant workstation 
+Setup Apache server, PHP and MySql in Vagrant 
 
-### What is vagrant?
-Vagrant is open source and allow to use virtual machines via command-line. The workstation can be defined in code, easy to back up, modify and share.
+## Git Clone
 
-### Install Virtual Box
+`cd folder` and run `mkdir files` and keep you files in the folder.
 
-https://www.virtualbox.org/wiki/Linux_Downloads 
+Open terminal and run 
+`vagrant up`
 
+Check Vagrant file to uncomment the provisoiner path, run `vagrant provision` if needed
 
-### Install Vagrant
+## Setup the MySql environment 
 
-https://www.vagrantup.com/downloads.html
+Run `vagrant ssh` and run
+`mysql_secure_installation` to setup MySql; follow the instructions
+ <a href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-in-ubuntu-16-04#step-2-install-mysql-to-manage-site-data">Read more </a>
 
-### Run box
-#### Create and direct to the folder
+## Setup vhost
 
-  mkdir mybox 
-
-  cd mybox 
-
-
-#### Run bellow comment (bento is a organizition name)
-
- vagrant init bento/ubuntu-16.04 
-
- vagrant up 
-
- vagrant status 
-
-
-## Create a folder named files and keep your files in your Host machine 
-config.vm.synced_folder "files", "/files_data"
-
-## Uncomment the provisioners and run vagrant provision 
+<a href="https://github.com/rajah10/Vagrant_vhost"> How to set up vhost </a>
